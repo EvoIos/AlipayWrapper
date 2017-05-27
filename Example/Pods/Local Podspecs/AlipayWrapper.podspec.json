@@ -30,6 +30,10 @@
   },
   "subspecs": [
     {
+      "name": "Util",
+      "source_files": "AlipayWrapper/Util/**/*.{h,m}"
+    },
+    {
       "name": "OpenSSL",
       "source_files": "AlipayWrapper/Openssl/**/*.h",
       "ios": {

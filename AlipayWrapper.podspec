@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlipayWrapper'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of AlipayWrapper.'
 
 # This description is used to generate tags and improve search results.
@@ -40,6 +40,10 @@ TODO: Add long description of the pod here.
     'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
   }
 
+  s.subspec 'Util' do |util|
+    util.source_files = 'AlipayWrapper/Util/**/*.{h,m}'
+  end
+  
   s.subspec 'OpenSSL' do |openssl|
     openssl.source_files = 'AlipayWrapper/Openssl/**/*.h'
     openssl.ios.preserve_paths      = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'

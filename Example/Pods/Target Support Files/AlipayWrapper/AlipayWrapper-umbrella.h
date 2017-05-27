@@ -12,12 +12,6 @@
 
 #import "APAuthV2Info.h"
 #import "Order.h"
-#import "base64.h"
-#import "config.h"
-#import "NSDataEx.h"
-#import "openssl_wrapper.h"
-#import "RSADataSigner.h"
-#import "RSADataVerifier.h"
 #import "aes.h"
 #import "asn1.h"
 #import "asn1t.h"
@@ -93,6 +87,12 @@
 #import "x509.h"
 #import "x509v3.h"
 #import "x509_vfy.h"
+#import "base64.h"
+#import "config.h"
+#import "NSDataEx.h"
+#import "openssl_wrapper.h"
+#import "RSADataSigner.h"
+#import "RSADataVerifier.h"
 
 FOUNDATION_EXPORT double AlipayWrapperVersionNumber;
 FOUNDATION_EXPORT const unsigned char AlipayWrapperVersionString[];

@@ -3,7 +3,10 @@ PODS:
   - AlipayWrapper (0.1.1):
     - AlipaySDKIniOS (~> 15.2.0)
     - AlipayWrapper/OpenSSL (= 0.1.1)
+    - AlipayWrapper/Util (= 0.1.1)
   - AlipayWrapper/OpenSSL (0.1.1):
+    - AlipaySDKIniOS (~> 15.2.0)
+  - AlipayWrapper/Util (0.1.1):
     - AlipaySDKIniOS (~> 15.2.0)
 
 DEPENDENCIES:
@@ -15,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AlipaySDKIniOS: 85f1f1314758f7a2916b7fb40e7bcfb7425556ec
-  AlipayWrapper: 89c89f57dc89b3079f1edfd07d99a6270863e0a0
+  AlipayWrapper: 40592e56b64023eb4c4a72cd0525c4fd04bae5c8
 
 PODFILE CHECKSUM: c5f153bebd7afd489fc5730acd5506cd0e600790
 
