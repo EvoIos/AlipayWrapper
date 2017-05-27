@@ -1,0 +1,6 @@
+framework module AlipayWrapper {
+  umbrella header "AlipayWrapper-umbrella.h"
+
+  export *
+  module * { export * }
+}

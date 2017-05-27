@@ -1,11 +1,19 @@
+source 'https://github.com/EvoIos/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
 
 target 'AlipayWrapper_Example' do
   pod 'AlipayWrapper', :path => '../'
 
   target 'AlipayWrapper_Tests' do
-    inherit! :search_paths
-
-    
+    inherit! :search_paths    
   end
 end
+
+pre_install do |installer|
+    # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289
+    def installer.verify_no_static_framework_transitive_dependencies; end
+end
+
+

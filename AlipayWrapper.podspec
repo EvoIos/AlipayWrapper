@@ -21,22 +21,28 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/zhenglanchun/AlipayWrapper'
+  s.homepage         = 'https://github.com/EvoIos/AlipayWrapper'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zhenglanchun' => 'zlanchun@icloud.com' }
-  s.source           = { :git => 'https://github.com/zhenglanchun/AlipayWrapper.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/EvoIos/AlipayWrapper.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.platform     = :ios, "7.0"
+  s.ios.deployment_target = '7.0'
 
-  s.source_files = 'AlipayWrapper/Classes/**/*'
+  s.source_files = 'AlipayWrapper/Classes/**/*.{h,m}'#,'AlipayWrapper/StaticLibrary/**/*.a'
   
-  # s.resource_bundles = {
-  #   'AlipayWrapper' => ['AlipayWrapper/Assets/*.png']
-  # }
+  s.ios.preserve_paths      = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
+  s.ios.vendored_libraries  = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.libraries = 'ssl', 'crypto'
+
+  s.dependency 'AlipaySDKIniOS', '~> 15.2.0'
+
+  s.pod_target_xcconfig = {
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/AlipaySDKIniOS',
+    'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+  }
+
 end

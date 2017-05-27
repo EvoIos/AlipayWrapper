@@ -1,0 +1,45 @@
+{
+  "name": "AlipayWrapper",
+  "version": "0.1.0",
+  "summary": "A short description of AlipayWrapper.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/EvoIos/AlipayWrapper",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhenglanchun": "zlanchun@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/EvoIos/AlipayWrapper.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "AlipayWrapper/Classes/**/*.{h,m}",
+  "ios": {
+    "preserve_paths": [
+      "AlipayWrapper/StaticLibrary/libcrypto.a",
+      "AlipayWrapper/StaticLibrary/libssl.a"
+    ],
+    "vendored_libraries": [
+      "AlipayWrapper/StaticLibrary/libcrypto.a",
+      "AlipayWrapper/StaticLibrary/libssl.a"
+    ]
+  },
+  "libraries": [
+    "ssl",
+    "crypto"
+  ],
+  "dependencies": {
+    "AlipaySDKIniOS": [
+      "~> 15.2.0"
+    ]
+  },
+  "pod_target_xcconfig": {
+    "FRAMEWORK_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/AlipaySDKIniOS",
+    "OTHER_LDFLAGS": "$(inherited) -undefined dynamic_lookup"
+  }
+}
