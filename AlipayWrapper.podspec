@@ -31,18 +31,21 @@ TODO: Add long description of the pod here.
   s.platform     = :ios, "7.0"
   s.ios.deployment_target = '7.0'
 
-  s.source_files = 'AlipayWrapper/Classes/**/*.{h,m}'#,'AlipayWrapper/StaticLibrary/**/*.a'
+  s.source_files = 'AlipayWrapper/Classes/**/*.{h,m}'
   
-  s.ios.preserve_paths      = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
-  s.ios.vendored_libraries  = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
-
-  s.libraries = 'ssl', 'crypto'
-
   s.dependency 'AlipaySDKIniOS', '~> 15.2.0'
 
   s.pod_target_xcconfig = {
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/AlipaySDKIniOS',
     'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
   }
+
+  s.subspec 'OpenSSL' do |openssl|
+    openssl.source_files = 'AlipayWrapper/Openssl/**/*.h'
+    openssl.ios.preserve_paths      = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
+    openssl.ios.vendored_libraries  = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
+    openssl.libraries = 'ssl', 'crypto'
+    openssl.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/#{s.name}/AlipayWrapper/Openssl/**" }
+  end
 
 end

@@ -1,7 +1,7 @@
 CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/AlipayWrapper
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(PODS_ROOT)/AlipaySDKIniOS
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AlipaySDKIniOS"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AlipaySDKIniOS" ${PODS_ROOT}/AlipayWrapper/AlipayWrapper/Openssl/**
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../AlipayWrapper/StaticLibrary"
 OTHER_LDFLAGS = $(inherited) -undefined dynamic_lookup -l"crypto" -l"ssl"
 PODS_BUILD_DIR = $BUILD_DIR

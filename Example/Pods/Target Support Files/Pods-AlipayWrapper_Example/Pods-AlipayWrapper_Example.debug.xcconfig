@@ -1,6 +1,6 @@
 FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AlipayWrapper" "${PODS_ROOT}/AlipaySDKIniOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AlipaySDKIniOS"
+HEADER_SEARCH_PATHS = ${PODS_ROOT}/AlipayWrapper/AlipayWrapper/Openssl/** $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AlipaySDKIniOS"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/AlipayWrapper/AlipayWrapper.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AlipaySDKIniOS"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "AlipaySDK" -framework "AlipayWrapper" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreMotion" -framework "CoreTelephony" -framework "CoreText" -framework "Foundation" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"

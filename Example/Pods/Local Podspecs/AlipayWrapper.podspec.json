@@ -1,6 +1,6 @@
 {
   "name": "AlipayWrapper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A short description of AlipayWrapper.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/EvoIos/AlipayWrapper",
@@ -13,26 +13,12 @@
   },
   "source": {
     "git": "https://github.com/EvoIos/AlipayWrapper.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "7.0"
   },
   "source_files": "AlipayWrapper/Classes/**/*.{h,m}",
-  "ios": {
-    "preserve_paths": [
-      "AlipayWrapper/StaticLibrary/libcrypto.a",
-      "AlipayWrapper/StaticLibrary/libssl.a"
-    ],
-    "vendored_libraries": [
-      "AlipayWrapper/StaticLibrary/libcrypto.a",
-      "AlipayWrapper/StaticLibrary/libssl.a"
-    ]
-  },
-  "libraries": [
-    "ssl",
-    "crypto"
-  ],
   "dependencies": {
     "AlipaySDKIniOS": [
       "~> 15.2.0"
@@ -41,5 +27,28 @@
   "pod_target_xcconfig": {
     "FRAMEWORK_SEARCH_PATHS": "$(inherited) $(PODS_ROOT)/AlipaySDKIniOS",
     "OTHER_LDFLAGS": "$(inherited) -undefined dynamic_lookup"
-  }
+  },
+  "subspecs": [
+    {
+      "name": "OpenSSL",
+      "source_files": "AlipayWrapper/Openssl/**/*.h",
+      "ios": {
+        "preserve_paths": [
+          "AlipayWrapper/StaticLibrary/libcrypto.a",
+          "AlipayWrapper/StaticLibrary/libssl.a"
+        ],
+        "vendored_libraries": [
+          "AlipayWrapper/StaticLibrary/libcrypto.a",
+          "AlipayWrapper/StaticLibrary/libssl.a"
+        ]
+      },
+      "libraries": [
+        "ssl",
+        "crypto"
+      ],
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/AlipayWrapper/AlipayWrapper/Openssl/**"
+      }
+    }
+  ]
 }
