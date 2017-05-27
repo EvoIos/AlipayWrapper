@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'AlipayWrapper'
   s.version          = '0.1.2'
-  s.summary          = 'A short description of AlipayWrapper.'
+  s.summary          = 'AlipayWrapper 是 AlipaySDK 的帮助类库。'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+AlipayWrapper 是 AlipaySDK 的帮助类库。它从 AlipaySDK 官方 Demo 中提取除 AlipaySDK.framework 和 AlipaySDK.bundle 之外的文件。
                        DESC
 
   s.homepage         = 'https://github.com/EvoIos/AlipayWrapper'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'zhenglanchun' => 'zlanchun@icloud.com' }
+  s.author           = { 'zhenglanchun' => 'zlanchun@gmail.com' }
   s.source           = { :git => 'https://github.com/EvoIos/AlipayWrapper.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
