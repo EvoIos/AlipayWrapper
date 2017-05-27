@@ -1,6 +1,3 @@
-source 'https://github.com/EvoIos/Specs.git'
-source 'https://github.com/CocoaPods/Specs.git'
-
 use_frameworks!
 
 target 'AlipayWrapper_Example' do

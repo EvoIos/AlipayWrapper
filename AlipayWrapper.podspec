@@ -42,10 +42,12 @@ AlipayWrapper 是 AlipaySDK 的帮助类库。它从 AlipaySDK 官方 Demo 中�
 
   s.subspec 'Util' do |util|
     util.source_files = 'AlipayWrapper/Util/**/*.{h,m}'
+    util.dependency 'AlipayWrapper/OpenSSL'
   end
   
   s.subspec 'OpenSSL' do |openssl|
     openssl.source_files = 'AlipayWrapper/Openssl/**/*.h'
+    openssl.public_header_files = 'AlipayWrapper/Openssl/**/*.h'
     openssl.ios.preserve_paths      = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
     openssl.ios.vendored_libraries  = 'AlipayWrapper/StaticLibrary/libcrypto.a', 'AlipayWrapper/StaticLibrary/libssl.a'
     openssl.libraries = 'ssl', 'crypto'
