@@ -1,26 +1,22 @@
 # AlipayWrapper
 
-[![CI Status](http://img.shields.io/travis/zhenglanchun/AlipayWrapper.svg?style=flat)](https://travis-ci.org/zhenglanchun/AlipayWrapper)
-[![Version](https://img.shields.io/cocoapods/v/AlipayWrapper.svg?style=flat)](http://cocoapods.org/pods/AlipayWrapper)
-[![License](https://img.shields.io/cocoapods/l/AlipayWrapper.svg?style=flat)](http://cocoapods.org/pods/AlipayWrapper)
-[![Platform](https://img.shields.io/cocoapods/p/AlipayWrapper.svg?style=flat)](http://cocoapods.org/pods/AlipayWrapper)
+## 说明
 
-## Example
+AlipayWrapper 是 AlipaySDK 的帮助类库。它从 AlipaySDK 官方 Demo 中提取除 AlipaySDK.framework 和 AlipaySDK.bundle 之外的文件。
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+具体使用方法，参考 Example.
 
-## Requirements
+## 要求
 
-## Installation
+iOS: 7.0 以上
 
-AlipayWrapper is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## 集成
 
 ```ruby
 pod "AlipayWrapper"
 ```
 
-## Author
+## 作者
 
 zhenglanchun, zlanchun@icloud.com
 
