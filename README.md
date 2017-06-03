@@ -31,7 +31,7 @@ end
 
 ## 作者
 
-zhenglanchun, zlanchun@icloud.com
+zhenglanchun, zlanchun@gmail.com
 
 ## License
 
